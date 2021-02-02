@@ -20,8 +20,6 @@ app.use(express.static("public"));
 
 mongoose.connect('mongodb+srv://vmattz:' + process.env.PASSWORD + '@cluster0.k41nf.mongodb.net/portfoliodb', {useNewUrlParser: true});
 
-console.log(process.env.PASSWORD);
-
 const postSchema = new mongoose.Schema({
   title: String,
   content: String
