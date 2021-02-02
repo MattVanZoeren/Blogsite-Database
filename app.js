@@ -1,4 +1,5 @@
 
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -17,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://vmattz:Mollycody1993@cluster0.k41nf.mongodb.net/portfoliodb', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://vmattz:' + process.env.PASSWORD + '@cluster0.k41nf.mongodb.net/portfoliodb', {useNewUrlParser: true});
 
 const postSchema = new mongoose.Schema({
   title: String,
